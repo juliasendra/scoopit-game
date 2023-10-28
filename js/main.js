@@ -11,3 +11,13 @@ document.addEventListener("keydown", (e) => {
             break;
     }
 });
+
+function fallDown() {
+    setInterval(
+        function() {
+            scoop.moveDown();
+        }
+    ,100);
+}
+
+fallDown();
