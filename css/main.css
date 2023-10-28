@@ -16,12 +16,7 @@ body {
     position: absolute;
 }
 
-#sccop1 {
-    background-color: lightsalmon;
-    position: absolute;
-}
-
-#scoop {
+.scoop {
     background-color: plum;
     position: absolute;
 }

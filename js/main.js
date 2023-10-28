@@ -1,5 +1,8 @@
 const player = new Player();
-const scoop = new Scoop();
+const scoopsArr = [];
+
+
+
 
 document.addEventListener("keydown", (e) => {
     switch (e.code) {
@@ -12,7 +15,7 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-function fallDown() {
+function fallDown(scoop) {
     setInterval(
         function() {
             scoop.moveDown();
@@ -33,4 +36,14 @@ function fallDown() {
     ,100);
 }
 
-fallDown();
+function generateScoop() {
+    let count = 0;
+    setInterval(() => {
+        count++
+        const scoop = new Scoop("scoop" + count);
+        scoopsArr.push(scoop);
+        fallDown(scoop)
+    }, 3000);
+}
+
+generateScoop();
