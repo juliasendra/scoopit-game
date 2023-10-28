@@ -6,11 +6,17 @@ body {
 #board {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     position: relative;
 
 }
 
 #player {
+    background-color: lightsalmon;
+    position: absolute;
+}
+
+#sccop1 {
     background-color: lightsalmon;
     position: absolute;
 }
