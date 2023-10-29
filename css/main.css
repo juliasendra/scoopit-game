@@ -7,21 +7,25 @@ body {
     height: 100vh;
     overflow: hidden;
     position: relative;
+    background: lightblue;
 
 }
 
 #player {
-    background-color: lightsalmon;
+    background: url(../images/cone.png);
     position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .scoop {
-    background-color: plum;
     position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #score {
-    margin: 5;
+    margin: 30px;
     position: absolute;
     color: blueviolet;
 }
