@@ -19,4 +19,13 @@ class Player {
         this.positionX++;
         this.playerElm.style.left = this.positionX + "vw";
     }
+    grow() {
+        this.height += 15;
+        this.playerElm.style.height = this.height + 'vh';
+    }
+    reset() {
+        this.height = 15;
+        this.playerElm.style.height = 15 + 'vh';    
+    }
+
 }

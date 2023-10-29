@@ -2,7 +2,6 @@ body {
     background-color: #ddd;
 }
 
-
 #board {
     width: 100vw;
     height: 100vh;
@@ -19,4 +18,10 @@ body {
 .scoop {
     background-color: plum;
     position: absolute;
+}
+
+#score {
+    margin: 5;
+    position: absolute;
+    color: blueviolet;
 }
