@@ -25,7 +25,7 @@ class Player {
         this.height += 5;
         this.playerElm.style.height = this.height + 'vh';
         this.scoopsInCone++;
-        switch(this.scoopsInCone) {
+        switch (this.scoopsInCone) {
             case 1:
                 this.playerElm.style.backgroundImage = "url(../images/1-pink-scoop.png)";
                 break;
@@ -40,7 +40,7 @@ class Player {
     }
     reset() {
         this.height = 10;
-        this.playerElm.style.height = 10 + 'vh';    
+        this.playerElm.style.height = 10 + 'vh';
         this.scoopsInCone = 0;
         this.playerElm.style.backgroundImage = "url(../images/cone.png)";
     }
