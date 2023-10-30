@@ -1,9 +1,12 @@
 const player = new Player();
 const scoopsArr = [];
+const fruitsArr = [];
 let scoopsAmount = 0;
 const bubbleSound = document.getElementById("bubble");
+let scoopsInterval;
+let fruitsInterval;
 
-
+let isGameOver = false;
 let score = 0;
 this.scoreElm = document.createElement("div");
 this.scoreElm.id = "score";
@@ -23,9 +26,7 @@ document.addEventListener("keydown", (e) => {
 
 function fallDown(scoop) {
     let myInterval = setInterval(function () {
-        scoop.moveDown();
-
-        if (scoop.positionY < 0 - scoop.height) {
+        if (scoop.positionY < 0 - scoop.height || this.isGameOver) {
             scoop.scoopElm.remove();
             clearInterval(myInterval);
             return;
@@ -45,12 +46,33 @@ function fallDown(scoop) {
             bubbleSound.play();
             clearInterval(myInterval);
         }
+
+        scoop.moveDown();
+    }, 100);
+}
+
+function fruitFallDown(fruit) {
+    let myInterval = setInterval(function () {
+        if (fruit.positionY < 0 - fruit.height || this.isGameOver) {
+            fruit.fruitElm.remove();
+            clearInterval(myInterval);
+            return;
+        }
+
+        if (checkCollision(player, fruit)) {
+            fruit.fruitElm.remove();
+            gameOver();
+            clearInterval();
+            return;
+        }
+
+        fruit.moveDown();
     }, 100);
 }
 
 function generateScoop() {
     let count = 0;
-    setInterval(() => {
+    scoopsInterval = setInterval(() => {
         count++
         const scoop = new Scoop("scoop" + count);
         scoopsArr.push(scoop);
@@ -60,6 +82,18 @@ function generateScoop() {
 
 generateScoop();
 
+function generateFruit() {
+    let count = 0;
+    fruitsInterval = setInterval(() => {
+        count++
+        const fruit = new Fruit("fruit" + count);
+        fruitsArr.push(fruit);
+        fruitFallDown(fruit);
+    }, 3000);
+}
+
+generateFruit();
+
 function checkCollision(player, scoop) {
     return (
         player.positionX < scoop.positionX + scoop.width &&
@@ -67,4 +101,19 @@ function checkCollision(player, scoop) {
         player.positionY < scoop.positionY + scoop.height &&
         player.positionY + player.height > scoop.positionY
     );
+}
+
+function checkFruitCollision(player, fruit) {
+    return (
+        player.positionX < fruit.positionX + fruit.width &&
+        player.positionX + player.width > fruit.positionX &&
+        player.positionY < fruit.positionY + fruit.height &&
+        player.positionY + player.height > fruit.positionY
+    );
+}
+
+function gameOver() {
+    this.isGameOver = true;
+    clearInterval(scoopsInterval);
+    clearInterval(fruitsInterval);
 }
