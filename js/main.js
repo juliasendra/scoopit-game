@@ -1,6 +1,8 @@
 const player = new Player();
 const scoopsArr = [];
 let scoopsAmount = 0;
+const bubbleSound = document.getElementById("bubble");
+
 
 let score = 0;
 this.scoreElm = document.createElement("div");
@@ -39,8 +41,8 @@ function fallDown(scoop) {
                 player.reset();
                 score++;
                 this.scoreElm.textContent = "Score: " + score;
-
             }
+            bubbleSound.play();
             clearInterval(myInterval);
         }
     }, 100);

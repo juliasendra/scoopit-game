@@ -12,6 +12,7 @@ class Player {
         this.playerElm.style.bottom = this.positionY + "%";
 
         this.scoopsInCone = 0;
+
     }
     moveLeft() {
         this.positionX--;
