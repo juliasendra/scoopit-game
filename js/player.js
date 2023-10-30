@@ -1,15 +1,15 @@
 class Player {
     constructor() {
-        this.width = 10;
+        this.width = 5;
         this.height = 10;
         this.positionX = 50 - (this.width / 2);
         this.positionY = 0;
 
         this.playerElm = document.getElementById("player");
-        this.playerElm.style.width = this.width + "vw";
-        this.playerElm.style.height = this.height + "vh";
-        this.playerElm.style.left = this.positionX + "vw";
-        this.playerElm.style.bottom = this.positionY + "vh";
+        this.playerElm.style.width = this.width + "%";
+        this.playerElm.style.height = this.height + "%";
+        this.playerElm.style.left = this.positionX + "%";
+        this.playerElm.style.bottom = this.positionY + "%";
 
         this.scoopsInCone = 0;
     }
@@ -23,7 +23,7 @@ class Player {
     }
     grow() {
         this.height += 5;
-        this.playerElm.style.height = this.height + 'vh';
+        this.playerElm.style.height = this.height + '%';
         this.scoopsInCone++;
         switch (this.scoopsInCone) {
             case 1:
@@ -40,7 +40,7 @@ class Player {
     }
     reset() {
         this.height = 10;
-        this.playerElm.style.height = 10 + 'vh';
+        this.playerElm.style.height = 10 + '%';
         this.scoopsInCone = 0;
         this.playerElm.style.backgroundImage = "url(../images/cone.png)";
     }

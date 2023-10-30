@@ -63,6 +63,6 @@ function checkCollision(player, scoop) {
         player.positionX < scoop.positionX + scoop.width &&
         player.positionX + player.width > scoop.positionX &&
         player.positionY < scoop.positionY + scoop.height &&
-        player.positionY + player.height * (scoopsAmount + 1) > scoop.positionY
+        player.positionY + player.height > scoop.positionY
     );
 }

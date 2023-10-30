@@ -1,6 +1,6 @@
 class Scoop {
     constructor(scoopId) {
-        this.width = 10;
+        this.width = 5;
         this.height = 10;
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1));
         this.positionY = 100 - (this.height / 2);
@@ -11,15 +11,15 @@ class Scoop {
         this.scoopElm.setAttribute("class", "scoop");
         let board = document.getElementById("board");
         board.appendChild(this.scoopElm);
-        this.scoopElm.style.width = this.width + "vw";
-        this.scoopElm.style.height = this.height + "vh";
-        this.scoopElm.style.left = this.positionX + "vw";
-        this.scoopElm.style.bottom = this.positionY + "vh";
+        this.scoopElm.style.width = this.width + "%";
+        this.scoopElm.style.height = this.height + "%";
+        this.scoopElm.style.left = this.positionX + "%";
+        this.scoopElm.style.bottom = this.positionY + "%";
         this.scoopElm.style.backgroundImage = "url(../images/pink-scoop.png";
     }
 
     moveDown() {
         this.positionY--;
-        this.scoopElm.style.bottom = this.positionY + "vh";
+        this.scoopElm.style.bottom = this.positionY + "%";
     }
 }
