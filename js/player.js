@@ -22,10 +22,14 @@ class Player {
     }
 
     moveLeft() {
+        if (this.positionX < 0) return;
+
         this.positionX--;
         this.playerElm.style.left = this.positionX + "vw";
     }
     moveRight() {
+        if (this.positionX + this.width >= 100) return;
+        
         this.positionX++;
         this.playerElm.style.left = this.positionX + "vw";
     }

@@ -5,7 +5,7 @@ class Snowflake {
 
         this.positionX = playerPositionX
         this.positionY = playerPositionY;
-        this.fallSpeed = 2;
+        this.speed = 5;
 
         this.snowflakeElm = document.createElement("div");
         this.snowflakeElm.setAttribute("id", snowflakeId);
@@ -20,7 +20,7 @@ class Snowflake {
     }
 
     moveUp() {
-        this.positionY++;
+        this.positionY += this.speed;
         this.snowflakeElm.style.bottom = this.positionY + "%";
     }
 }
