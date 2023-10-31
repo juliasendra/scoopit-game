@@ -17,7 +17,7 @@ class Fruit {
         this.fruitElm.style.height = this.height + "%";
         this.fruitElm.style.left = this.positionX + "%";
         this.fruitElm.style.bottom = this.positionY + "%";
-        this.fruitElm.style.backgroundImage = "url(../images/orange.png";
+        this.fruitElm.style.backgroundImage = fruitImagesArr[Math.floor(Math.random()*fruitImagesArr.length)];
     }
 
     moveDown() {

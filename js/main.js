@@ -1,8 +1,10 @@
 const player = new Player();
 const scoopsArr = [];
 const fruitsArr = [];
+const fruitImagesArr = ["url(../images/orange.png", "url(../images/pear.png", "url(../images/watermelon.png", "url(../images/peach.png", "url(../images/apple.png"];
 let scoopsAmount = 0;
 const bubbleSound = document.getElementById("bubble");
+const negativeBeeps = document.getElementById("negativeBeeps");
 let scoopsInterval;
 let fruitsInterval;
 const gameOverElement = document.getElementById("gameOver");
@@ -71,7 +73,6 @@ function fruitFallDown(fruit) {
             gameOver();
             return;
         }
-
         fruit.moveDown();
     }, 100);
 }
@@ -125,6 +126,7 @@ function gameOver() {
     clearInterval(fruitsInterval);
 
     player.playerElm.remove();
+    negativeBeeps.play();
 
     const gameOver = document.getElementById("gameOver");
     const restartButton = document.getElementById("restartButton");
