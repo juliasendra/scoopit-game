@@ -5,6 +5,8 @@ let scoopsAmount = 0;
 const bubbleSound = document.getElementById("bubble");
 let scoopsInterval;
 let fruitsInterval;
+const gameOverElement = document.getElementById("gameOver");
+gameOverElement.style.display = "none";
 
 let isGameOver = false;
 let score = 0;
@@ -60,9 +62,7 @@ function fruitFallDown(fruit) {
         }
 
         if (checkCollision(player, fruit)) {
-            fruit.fruitElm.remove();
             gameOver();
-            clearInterval();
             return;
         }
 
@@ -114,6 +114,24 @@ function checkFruitCollision(player, fruit) {
 
 function gameOver() {
     this.isGameOver = true;
+
     clearInterval(scoopsInterval);
     clearInterval(fruitsInterval);
+
+    player.playerElm.remove();
+
+    const gameOver = document.getElementById("gameOver");
+    const restartButton = document.getElementById("restartButton");
+
+    gameOver.style.display = "block";
+    
+    restartButton.addEventListener("click", () => {
+        resetGame();
+    });
+}
+
+function resetGame() {
+    gameOverElement.style.display = "none";
+    location.reload();
+
 }
