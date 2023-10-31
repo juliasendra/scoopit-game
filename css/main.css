@@ -86,3 +86,9 @@ body {
     border-radius: 5 px;
     color: rgb(36, 36, 36);
 }
+
+.snowflake {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

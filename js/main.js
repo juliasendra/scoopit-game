@@ -3,14 +3,17 @@ const scoopsArr = [];
 const fruitsArr = [];
 const fruitImagesArr = ["url(../images/orange.png", "url(../images/pear.png", "url(../images/watermelon.png", "url(../images/peach.png", "url(../images/apple.png"];
 let scoopsAmount = 0;
+
 const bubbleSound = document.getElementById("bubble");
 const negativeBeeps = document.getElementById("negativeBeeps");
+
 let scoopsInterval;
 let fruitsInterval;
+
 const gameOverElement = document.getElementById("gameOver");
 gameOverElement.style.display = "none";
-
 let isGameOver = false;
+
 let score = 0;
 this.scoreElm = document.createElement("div");
 this.scoreElm.id = "score";
@@ -77,6 +80,18 @@ function fruitFallDown(fruit) {
     }, 100);
 }
 
+function snowflakeGoUp(snowflake) {
+    let myInterval = setInterval(function () {
+        if (snowflake.positionY > 100 - snowflake.height || this.isGameOver) {
+            snowflake.snowflakeElm.remove();
+            clearInterval(myInterval);
+            return;
+        }
+
+        snowflake.moveUp();
+    }, 100);
+}
+
 function generateScoop() {
     let count = 0;
     scoopsInterval = setInterval(() => {
@@ -96,7 +111,7 @@ function generateFruit() {
         const fruit = new Fruit("fruit" + count);
         fruitsArr.push(fruit);
         fruitFallDown(fruit);
-    }, 3000);
+    }, 2000);
 }
 
 generateFruit();
@@ -142,4 +157,18 @@ function resetGame() {
     gameOverElement.style.display = "none";
     location.reload();
 
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === " ") {
+        shootSnowflake();
+        e.preventDefault(); 
+}
+});
+
+function shootSnowflake() {
+    const playerPosition = player.getPlayerPosition();
+    const snowflakeId = "snowflake" + Date.now();
+    const snowflake = new Snowflake(snowflakeId, playerPosition.positionX, playerPosition.positionY);
+    snowflakeGoUp(snowflake)
 }
