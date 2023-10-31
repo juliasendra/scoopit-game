@@ -55,8 +55,16 @@ body {
 
 #score {
     margin: 50px;
+    margin-top: 85px;
     position: absolute;
     color: rgb(36, 36, 36);
+}
+
+#level {
+    margin: 50px;
+    position: absolute;
+    color: rgb(126, 22, 82);
+    font-style: italic;
 }
 
 #gameOver {
@@ -77,5 +85,4 @@ body {
     background-color: lightblue;
     border-radius: 5 px;
     color: rgb(36, 36, 36);
-
 }

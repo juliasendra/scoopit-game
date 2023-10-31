@@ -15,6 +15,12 @@ this.scoreElm.id = "score";
 this.scoreElm.textContent = "Score: " + score;
 board.appendChild(this.scoreElm);
 
+let level = 1;
+this.levelElm = document.createElement("div");
+this.levelElm.id = "level";
+this.levelElm.textContent = "Level: " + level;
+board.appendChild(this.levelElm);
+
 document.addEventListener("keydown", (e) => {
     switch (e.code) {
         case "ArrowLeft":
