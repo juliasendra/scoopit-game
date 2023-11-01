@@ -39,13 +39,13 @@ class Player {
         this.scoopsInCone++;
         switch (this.scoopsInCone) {
             case 1:
-                this.playerElm.style.backgroundImage = "url(../images/1-pink-scoop.png)";
+                this.playerElm.style.backgroundImage = "url(./images/1-pink-scoop.png)";
                 break;
             case 2:
-                this.playerElm.style.backgroundImage = "url(../images/2-pink-scoops.png)";
+                this.playerElm.style.backgroundImage = "url(./images/2-pink-scoops.png)";
                 break;
             case 3:
-                this.playerElm.style.backgroundImage = "url(../images/3-pink-scoops.png)";
+                this.playerElm.style.backgroundImage = "url(./images/3-pink-scoops.png)";
                 break;
 
         }
@@ -54,7 +54,7 @@ class Player {
         this.height = 10;
         this.playerElm.style.height = 10 + '%';
         this.scoopsInCone = 0;
-        this.playerElm.style.backgroundImage = "url(../images/cone.png)";
+        this.playerElm.style.backgroundImage = "url(./images/cone.png)";
     }
 
 }

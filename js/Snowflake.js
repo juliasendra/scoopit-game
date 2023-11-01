@@ -16,7 +16,7 @@ class Snowflake {
         this.snowflakeElm.style.height = this.height + "%";
         this.snowflakeElm.style.left = this.positionX + "%";
         this.snowflakeElm.style.bottom = this.positionY + "%";
-        this.snowflakeElm.style.backgroundImage = "url(../images/snowflake.png";
+        this.snowflakeElm.style.backgroundImage = "url(./images/snowflake.png";
     }
 
     moveUp() {

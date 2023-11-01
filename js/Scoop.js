@@ -17,7 +17,7 @@ class Scoop {
         this.scoopElm.style.height = this.height + "%";
         this.scoopElm.style.left = this.positionX + "%";
         this.scoopElm.style.bottom = this.positionY + "%";
-        this.scoopElm.style.backgroundImage = "url(../images/pink-scoop.png";
+        this.scoopElm.style.backgroundImage = "url(./images/pink-scoop.png";
     }
 
     moveDown() {
