@@ -1,7 +1,7 @@
 const player = new Player();
 const scoopsArr = [];
 const fruitsArr = [];
-const fruitImagesArr = ["url(../images/orange.png", "url(../images/pear.png", "url(../images/watermelon.png", "url(../images/peach.png", "url(../images/apple.png"];
+const fruitImagesArr = ["url(./images/orange.png", "url(./images/pear.png", "url(./images/watermelon.png", "url(./images/peach.png", "url(./images/apple.png"];
 let scoopsAmount = 0;
 
 const bubbleSound = document.getElementById("bubble");
