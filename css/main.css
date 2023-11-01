@@ -12,26 +12,19 @@ body {
     font-size: 30px;
 }
 
+#imageTitle {
+    display: block;
+    width: 25%;
+    margin: 120px auto;
+}
+
+#instructions.visible #imageTitle {
+    display: block;
+  }
+
 #board {
     height: 100%;
     width: 100%;
-    /*If I want to resize the board
-    height: 80%;
-    width: 80%;
-    overflow: hidden;
-    background: lightblue;
-    background-size: cover;
-    background-attachment: scroll;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border: 10px solid rgb(252, 240, 242);
-    border-radius: 5px;*/
 }
 
 #player {
@@ -98,9 +91,6 @@ body {
     margin: 10px;
     align-items: center;
     vertical-align: middle;
-}
-
-#arrowsImage {
 }
 
 #gameOver {
