@@ -1,5 +1,6 @@
 class Fruit {
     constructor(fruitId) {
+        this.fallInterval;
         this.width = 5;
         this.height = 10;
 

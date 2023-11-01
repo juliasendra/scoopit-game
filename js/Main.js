@@ -73,21 +73,33 @@ function fruitFallDown(fruit) {
         }
 
         if (checkCollision(player, fruit)) {
+            clearInterval(myInterval);
             gameOver();
             return;
         }
         fruit.moveDown();
     }, 100);
+    fruit.fallInterval = myInterval;
 }
 
 function snowflakeGoUp(snowflake) {
-    let myInterval = setInterval(function () {
+    let myInterval = setInterval(() => {
         if (snowflake.positionY > 100 - snowflake.height || this.isGameOver) {
             snowflake.snowflakeElm.remove();
             clearInterval(myInterval);
             return;
         }
-
+        console.log(fruitsArr);
+        
+        for (let fruit of fruitsArr) {
+            if (checkSnowflakeCollision(fruit, snowflake)) {
+                snowflake.snowflakeElm.remove();
+                fruit.fruitElm.remove();
+                clearInterval(fruit.fallInterval);
+                clearInterval(myInterval);
+                return;
+            }
+        }
         snowflake.moveUp();
     }, 100);
 }
@@ -134,6 +146,16 @@ function checkFruitCollision(player, fruit) {
     );
 }
 
+function checkSnowflakeCollision(fruit, snowflake) {
+    console.log(fruit, snowflake)
+    return (
+        snowflake.positionX < fruit.positionX + fruit.width &&
+        snowflake.positionX + snowflake.width > fruit.positionX &&
+        snowflake.positionY < fruit.positionY + fruit.height &&
+        snowflake.positionY + snowflake.height > fruit.positionY
+    );
+}
+
 function gameOver() {
     this.isGameOver = true;
 
@@ -156,14 +178,13 @@ function gameOver() {
 function resetGame() {
     gameOverElement.style.display = "none";
     location.reload();
-
 }
 
 document.addEventListener("keydown", (e) => {
     if (e.key === " ") {
         shootSnowflake();
         e.preventDefault(); 
-}
+    }
 });
 
 function shootSnowflake() {
