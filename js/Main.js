@@ -3,6 +3,7 @@ const scoopsArr = [];
 const fruitsArr = [];
 const fruitImagesArr = ["url(./images/orange.png", "url(./images/pear.png", "url(./images/watermelon.png", "url(./images/peach.png", "url(./images/apple.png"];
 let scoopsAmount = 0;
+let fallingScoopCount = 0;
 
 const bubbleSound = document.getElementById("bubble");
 const negativeBeeps = document.getElementById("negativeBeeps");
@@ -74,6 +75,7 @@ function fruitFallDown(fruit) {
 
         if (checkCollision(player, fruit)) {
             clearInterval(myInterval);
+            fruit.fruitElm.remove();
             gameOver();
             return;
         }
@@ -89,14 +91,16 @@ function snowflakeGoUp(snowflake) {
             clearInterval(myInterval);
             return;
         }
-        console.log(fruitsArr);
         
-        for (let fruit of fruitsArr) {
+        for (let i = 0; i < fruitsArr.length; i++) {
+            let fruit = fruitsArr[i];
             if (checkSnowflakeCollision(fruit, snowflake)) {
                 snowflake.snowflakeElm.remove();
                 fruit.fruitElm.remove();
+                fruitsArr.splice(i, 1);
                 clearInterval(fruit.fallInterval);
                 clearInterval(myInterval);
+                convertFruitToScoop(fruit);
                 return;
             }
         }
@@ -104,11 +108,18 @@ function snowflakeGoUp(snowflake) {
     }, 100);
 }
 
+function convertFruitToScoop(fruit) {
+    fallingScoopCount++;
+    const scoop = new Scoop("scoop" + fallingScoopCount);
+    scoop.setPosition(fruit.positionX, fruit.positionY);
+    scoopsArr.push(scoop);
+    fallDown(scoop);
+}
+
 function generateScoop() {
-    let count = 0;
     scoopsInterval = setInterval(() => {
-        count++
-        const scoop = new Scoop("scoop" + count);
+        fallingScoopCount++;
+        const scoop = new Scoop("scoop" + fallingScoopCount);
         scoopsArr.push(scoop);
         fallDown(scoop);
     }, 3000);
@@ -123,7 +134,7 @@ function generateFruit() {
         const fruit = new Fruit("fruit" + count);
         fruitsArr.push(fruit);
         fruitFallDown(fruit);
-    }, 2000);
+    }, 800);
 }
 
 generateFruit();
@@ -135,7 +146,7 @@ function checkCollision(player, scoop) {
         player.positionY < scoop.positionY + scoop.height &&
         player.positionY + player.height > scoop.positionY
     );
-}
+} 
 
 function checkFruitCollision(player, fruit) {
     return (
@@ -147,7 +158,6 @@ function checkFruitCollision(player, fruit) {
 }
 
 function checkSnowflakeCollision(fruit, snowflake) {
-    console.log(fruit, snowflake)
     return (
         snowflake.positionX < fruit.positionX + fruit.width &&
         snowflake.positionX + snowflake.width > fruit.positionX &&

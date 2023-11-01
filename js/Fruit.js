@@ -22,7 +22,7 @@ class Fruit {
     }
 
     moveDown() {
-        this.positionY--;
+        this.positionY -= this.fallSpeed;
         this.fruitElm.style.bottom = this.positionY + "%";
     }
 }

@@ -24,4 +24,11 @@ class Scoop {
         this.positionY--;
         this.scoopElm.style.bottom = this.positionY + "%";
     }
+
+    setPosition(newPositionX, newPositionY) {
+        this.positionX = newPositionX;
+        this.positionY = newPositionY;
+        this.scoopElm.style.left = this.positionX + "%";
+        this.scoopElm.style.bottom = this.positionY + "%";
+    }
 }
