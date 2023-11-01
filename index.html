@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <link rel="icon" href="./images/scoop-it-favicon.png" type="image/x-icon">
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +11,36 @@
     <link rel="stylesheet" href="./css/main.css">
 
 </head>
+
 <body>
-    <div id="gameOver"> 
-        <h2>GAME OVER!</h2>
-        <button id="restartButton">Restart</button>
+    <div id="instructions">
+        <h2>Instructions</h2>
+        <p id="instructionsParagraph">Move</p>
+        <img id="arrowsImage" src="./images/arrows.png" alt="Left & right arrows">
+        <br>
+        <p id="instructionsParagraph">Shoot</p>
+        <img src="./images/spacebar.png" alt="Spacebar icon">
+        <br>
+        <p id="instructionsParagraph">Avoid the fruits
+            <br>
+            & collect icecream scoops!!
+        </p>
+        <button id="playButton">Play</button>
     </div>
 
-    <div id="board">
-        <div id="player"></div>
-    </div>
+    <div id="game" style="display: none;">
+        <div id="gameOver">
+            <h2>GAME OVER</h2>
+            <button id="restartButton">Restart</button>
+        </div>
 
-    <audio id="bubble" src="./sounds/bubble.mp3"></audio>
-    <audio id="negativeBeeps" src="./sounds/negative_beeps.mp3"></audio>
+        <div id="board">
+            <div id="player"></div>
+        </div>
+
+        <audio id="bubble" src="./sounds/bubble.mp3"></audio>
+        <audio id="negativeBeeps" src="./sounds/negative_beeps.mp3"></audio>
+    </div>
 
 
     <script src="./js/Fruit.js"></script>
@@ -31,4 +50,5 @@
     <script src="./js/Main.js"></script>
 
 </body>
+
 </html>

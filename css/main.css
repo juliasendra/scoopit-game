@@ -67,6 +67,42 @@ body {
     font-style: italic;
 }
 
+#instructions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: inline-block;
+    justify-content: middle;
+    color: rgb(126, 22, 82);
+    background-color:pink;
+    padding: 30px;
+    border: 3px solid rgb(126, 22, 82);
+    border-radius: 5px;
+}
+
+#playButton {
+    font-family: "FranxurterTotallyMedium";
+    background-color: lightblue;
+    border-radius: 15px;
+    color: rgb(36, 36, 36);
+    font-size: 25px;
+}
+
+#instructionsParagraph {
+    font-family: "FranxurterTotallyMedium";
+    color: rgb(36, 36, 36);
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#arrowsImage {
+}
+
 #gameOver {
     position: absolute;
     top: 50%;
@@ -83,7 +119,8 @@ body {
 #restartButton {
     font-family: "FranxurterTotallyMedium";
     background-color: lightblue;
-    border-radius: 5 px;
+    border-radius: 15px;
+    font-size: 18px;
     color: rgb(36, 36, 36);
 }
 

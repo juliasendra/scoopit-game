@@ -27,6 +27,13 @@ this.levelElm.id = "level";
 this.levelElm.textContent = "Level: " + level;
 board.appendChild(this.levelElm);
 
+document.getElementById("playButton").addEventListener("click", function() {
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("game").style.display = "block";
+  
+ 
+  
+
 document.addEventListener("keydown", (e) => {
     switch (e.code) {
         case "ArrowLeft":
@@ -203,3 +210,5 @@ function shootSnowflake() {
     const snowflake = new Snowflake(snowflakeId, playerPosition.positionX, playerPosition.positionY);
     snowflakeGoUp(snowflake)
 }
+
+});
