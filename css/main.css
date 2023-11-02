@@ -32,18 +32,21 @@ body {
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    transition: all 0.1s;
 }
 
 .scoop {
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    transition: all 0.1s;
 }
 
 .fruit {
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    transition: all 0.1s;
 }
 
 #score {
@@ -118,4 +121,5 @@ body {
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    transition: all 0.1s;
 }
