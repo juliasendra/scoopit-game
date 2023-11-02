@@ -7,6 +7,7 @@ let fallingScoopCount = 0;
 
 const bubbleSound = document.getElementById("bubble");
 const negativeBeeps = document.getElementById("negativeBeeps");
+const snowflakeAudio = document.getElementById("snowflakeCollision");
 const soundtrack = document.getElementById("backgroundMusic");
 
 let scoopsInterval;
@@ -33,6 +34,7 @@ document.getElementById("playButton").addEventListener("click", function () {
     document.getElementById("game").style.display = "block";
     document.getElementById("imageTitle").style.display = "none";
     soundtrack.play()
+    soundtrack.volume -= 0.8;
    
     
     document.addEventListener("keydown", (e) => {
@@ -109,6 +111,7 @@ document.getElementById("playButton").addEventListener("click", function () {
                     clearInterval(fruit.fallInterval);
                     clearInterval(myInterval);
                     convertFruitToScoop(fruit);
+                    snowflakeAudio.play();
                     return;
                 }
             }
