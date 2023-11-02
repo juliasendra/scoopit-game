@@ -1,5 +1,5 @@
 class Fruit {
-    constructor(fruitId) {
+    constructor(fruitId, level) {
         this.fallInterval;
         this.width = 5;
         this.height = 10;
@@ -7,7 +7,7 @@ class Fruit {
         let board = document.getElementById("board");
         this.positionX = Math.floor(Math.random() * (100 - this.width));
         this.positionY = 100 - (this.height / 2);
-        this.fallSpeed = 2;
+        this.fallSpeed = level;
 
         this.fruitElm = document.createElement("div");
         this.fruitElm.setAttribute("id", fruitId);

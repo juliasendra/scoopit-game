@@ -64,8 +64,13 @@ document.getElementById("playButton").addEventListener("click", function () {
                 } else {
                     scoopsAmount = 0;
                     player.reset();
-                    score++;
-                    this.scoreElm.textContent = "Score: " + score;
+                }
+                score++;
+                this.scoreElm.textContent = "Score: " + score;
+                if (score === 12) {
+                    level++;
+                    resetScore();
+                    this.levelElm.textContent = "Level: " + level;
                 }
                 bubbleSound.play();
                 clearInterval(myInterval);
@@ -83,7 +88,7 @@ document.getElementById("playButton").addEventListener("click", function () {
                 return;
             }
 
-            if (checkCollision(player, fruit)) {
+            if (checkFruitCollision(player, fruit)) {
                 clearInterval(myInterval);
                 fruit.fruitElm.remove();
                 gameOver();
@@ -142,7 +147,7 @@ document.getElementById("playButton").addEventListener("click", function () {
         let count = 0;
         fruitsInterval = setInterval(() => {
             count++
-            const fruit = new Fruit("fruit" + count);
+            const fruit = new Fruit("fruit" + count, level);
             fruitsArr.push(fruit);
             fruitFallDown(fruit);
         }, 800);
@@ -214,6 +219,11 @@ document.getElementById("playButton").addEventListener("click", function () {
         const snowflakeId = "snowflake" + Date.now();
         const snowflake = new Snowflake(snowflakeId, playerPosition.positionX, playerPosition.positionY);
         snowflakeGoUp(snowflake)
+    }
+
+    function resetScore() {
+        score = 0;
+        scoreElm.innerText = "Score: " + score;
     }
 
 });
