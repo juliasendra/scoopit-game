@@ -42,16 +42,16 @@ class Player {
                 this.playerElm.style.backgroundImage = pinkScoop1;
                 break;
             case 2:
-                this.playerElm.style.backgroundImage = "url(./images/2-pink-scoops.png)";
+                this.playerElm.style.backgroundImage = pinkScoop2;
                 break;
             case 3:
-                this.playerElm.style.backgroundImage = "url(./images/3-pink-scoops.png)";
+                this.playerElm.style.backgroundImage = pinkScoop3;
                 break;
             case 4:
-                this.playerElm.style.backgroundImage = "url(./images/4-pink-scoops.png)";
+                this.playerElm.style.backgroundImage = pinkScoop4;
                 break;
             case 5:
-                this.playerElm.style.backgroundImage = "url(./images/5-pink-scoops.png)";
+                this.playerElm.style.backgroundImage = pinkScoop5;
                 break;
         }
     }
