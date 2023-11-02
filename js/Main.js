@@ -7,6 +7,7 @@ let fallingScoopCount = 0;
 
 const bubbleSound = document.getElementById("bubble");
 const negativeBeeps = document.getElementById("negativeBeeps");
+const soundtrack = document.getElementById("backgroundMusic");
 
 let scoopsInterval;
 let fruitsInterval;
@@ -31,9 +32,9 @@ document.getElementById("playButton").addEventListener("click", function () {
     document.getElementById("instructions").style.display = "none";
     document.getElementById("game").style.display = "block";
     document.getElementById("imageTitle").style.display = "none";
+    soundtrack.play()
+   
     
-
-
     document.addEventListener("keydown", (e) => {
         switch (e.code) {
             case "ArrowLeft":
@@ -181,6 +182,7 @@ document.getElementById("playButton").addEventListener("click", function () {
 
         player.playerElm.remove();
         negativeBeeps.play();
+        soundtrack.pause();
 
         const gameOver = document.getElementById("gameOver");
         const restartButton = document.getElementById("restartButton");
