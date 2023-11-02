@@ -11,7 +11,7 @@ class Scoop {
         this.scoopElm = document.createElement("div");
         this.scoopElm.setAttribute("id", scoopId);
         this.scoopElm.setAttribute("class", "scoop");
-        
+
         board.appendChild(this.scoopElm);
         this.scoopElm.style.width = this.width + "%";
         this.scoopElm.style.height = this.height + "%";

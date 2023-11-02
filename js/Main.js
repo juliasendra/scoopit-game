@@ -35,8 +35,8 @@ document.getElementById("playButton").addEventListener("click", function () {
     document.getElementById("imageTitle").style.display = "none";
     soundtrack.play()
     soundtrack.volume -= 0.8;
-   
-    
+
+
     document.addEventListener("keydown", (e) => {
         switch (e.code) {
             case "ArrowLeft":
@@ -58,7 +58,7 @@ document.getElementById("playButton").addEventListener("click", function () {
 
             if (checkCollision(player, scoop)) {
                 scoop.scoopElm.remove();
-                if (scoopsAmount < 3) {
+                if (scoopsAmount < 5) {
                     scoopsAmount++;
                     player.grow();
                 } else {

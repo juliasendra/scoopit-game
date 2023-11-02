@@ -10,7 +10,7 @@ class Snowflake {
         this.snowflakeElm = document.createElement("div");
         this.snowflakeElm.setAttribute("id", snowflakeId);
         this.snowflakeElm.setAttribute("class", "snowflake");
-        
+
         board.appendChild(this.snowflakeElm);
         this.snowflakeElm.style.width = this.width + "%";
         this.snowflakeElm.style.height = this.height + "%";

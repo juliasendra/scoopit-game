@@ -29,7 +29,7 @@ class Player {
     }
     moveRight() {
         if (this.positionX + this.width >= 100) return;
-        
+
         this.positionX++;
         this.playerElm.style.left = this.positionX + "vw";
     }
@@ -47,7 +47,12 @@ class Player {
             case 3:
                 this.playerElm.style.backgroundImage = "url(./images/3-pink-scoops.png)";
                 break;
-
+            case 4:
+                this.playerElm.style.backgroundImage = "url(./images/4-pink-scoops.png)";
+                break;
+            case 5:
+                this.playerElm.style.backgroundImage = "url(./images/5-pink-scoops.png)";
+                break;
         }
     }
     reset() {

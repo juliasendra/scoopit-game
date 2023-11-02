@@ -12,13 +12,13 @@ class Fruit {
         this.fruitElm = document.createElement("div");
         this.fruitElm.setAttribute("id", fruitId);
         this.fruitElm.setAttribute("class", "fruit");
-        
+
         board.appendChild(this.fruitElm);
         this.fruitElm.style.width = this.width + "%";
         this.fruitElm.style.height = this.height + "%";
         this.fruitElm.style.left = this.positionX + "%";
         this.fruitElm.style.bottom = this.positionY + "%";
-        this.fruitElm.style.backgroundImage = fruitImagesArr[Math.floor(Math.random()*fruitImagesArr.length)];
+        this.fruitElm.style.backgroundImage = fruitImagesArr[Math.floor(Math.random() * fruitImagesArr.length)];
     }
 
     moveDown() {
