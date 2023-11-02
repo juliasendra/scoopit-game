@@ -72,7 +72,7 @@ document.getElementById("playButton").addEventListener("click", function () {
             }
 
             scoop.moveDown();
-        }, 100);
+        }, 50);
     }
 
     function fruitFallDown(fruit) {
