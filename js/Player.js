@@ -39,7 +39,7 @@ class Player {
         this.scoopsInCone++;
         switch (this.scoopsInCone) {
             case 1:
-                this.playerElm.style.backgroundImage = "url(./images/1-pink-scoop.png)";
+                this.playerElm.style.backgroundImage = pinkScoop1;
                 break;
             case 2:
                 this.playerElm.style.backgroundImage = "url(./images/2-pink-scoops.png)";
