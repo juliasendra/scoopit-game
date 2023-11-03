@@ -10,7 +10,9 @@ Objective: collect as many ice cream scoops as you can and aim for the highest s
 ## How to play
 
 Left Arrow: Move the ice cream cone to the left.
+
 Right Arrow: Move the ice cream cone to the right.
+
 Spacebar: Shoot a snowflake to convert a fruit into a scoop.
 
 ![Instructions screenshot](./images/Instructions.jpg)
